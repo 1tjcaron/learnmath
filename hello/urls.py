@@ -6,5 +6,5 @@ urlpatterns = [
     path('', views.hello, name='hello'),
 ]
 urlpatterns += [
-    path('test/zeroperc/', views.renew_book_librarian, name='zero-perc'),
+    path('quiz/zeroperc/', views.quiz_zero_perc, name='zero-perc'),
 ]
