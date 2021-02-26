@@ -2,11 +2,16 @@
 
 {% block content %}
   <form action="" method="post">
-    <h1>Fill in the blanks.</h1>
+    <h1>Fill in the blanks below.</h1>
     {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            <!-- <h2>{{ field.label_tag }} </h2> -->
+            <p class="help">{{ field.help_text|safe }}: {{ field }}</p>
+        </div>
+    {% endfor %}
+    <p>You must answer all questions in order to submit.</p>
     <input type="submit" value="Submit">
   </form>
 {% endblock %}

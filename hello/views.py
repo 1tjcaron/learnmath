@@ -23,12 +23,7 @@ def renew_book_librarian(request):
 
         # Check if the form is valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
-            # book_instance.due_back = form.cleaned_data['renewal_date']
-            # book_instance.save()
-
-            # redirect to a new URL:
-            return HttpResponseRedirect(reverse('all-borrowed') )
+            return HttpResponseRedirect("/" )
 
     # If this is a GET (or any other method) create the default form.
     else:
