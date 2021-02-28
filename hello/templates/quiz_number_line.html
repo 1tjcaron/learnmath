@@ -3,19 +3,16 @@
 
 {% block content %}
   <form action="" method="post">
-    <h1>Fill in the blanks below.</h1>
+    <h1>Use a double number line to find 20% of 75 </h1>
     {% csrf_token %}
     {% load static %} 
-        <hr>
-        <p>Made by ... </p>
-    {% for field in form %}
+    
         <div class="fieldWrapper" style='background: url("/static/images/nl2.png"); color:white; width: 500;   background-repeat: no-repeat;  background-size: contain; padding: 100px 0 0 0;'>
-            {{ field.errors }}
-            <!-- <h2>{{ field.label_tag }} </h2> -->
-            <p class="help">{{ field.help_text|safe }}: {{ field }}</p>
+            {{ form.problem_one }}
         </div>
-    {% endfor %}
-    <p>You must answer all questions in order to submit.</p>
+        {{ form.problem_one.errors }}
+            <!-- <h2>{{ field.label_tag }} </h2> -->
+        <p class="help">{{ form.problem_one.help_text|safe }}: </p>
     <input type="submit" value="Submit">
   </form>
 {% endblock %}
