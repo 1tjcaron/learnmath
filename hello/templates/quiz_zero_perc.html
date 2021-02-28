@@ -1,11 +1,17 @@
 
 
+
 {% block content %}
   <form action="" method="post">
     <h1>Fill in the blanks below.</h1>
     {% csrf_token %}
+    {% load static %} 
+    <!-- <div class="fieldWrapper" style='background: url("/static/images/nl2.png") 50% 0 no-repeat fixed; color:white; height: 650px; padding: 100px 0 0 0;'></div> {{ form.problem_one.help_text }} </div> -->
+    <!-- <img src="{% static 'images/nl2.png' %}"  width="500"/> -->
+        <hr>
+        <p>Made by ... </p>
     {% for field in form %}
-        <div class="fieldWrapper">
+        <div class="fieldWrapper" style='background: url("/static/images/nl2.png"); color:white; width: 500;   background-repeat: no-repeat;  background-size: contain; padding: 100px 0 0 0;'>
             {{ field.errors }}
             <!-- <h2>{{ field.label_tag }} </h2> -->
             <p class="help">{{ field.help_text|safe }}: {{ field }}</p>
