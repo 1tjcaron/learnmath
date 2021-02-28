@@ -1,11 +1,15 @@
 
 
+
 {% block content %}
   <form action="" method="post">
     <h1>Fill in the blanks below.</h1>
     {% csrf_token %}
+    {% load static %} 
+        <hr>
+        <p>Made by ... </p>
     {% for field in form %}
-        <div class="fieldWrapper">
+        <div class="fieldWrapper" style='background: url("/static/images/nl2.png"); color:white; width: 500;   background-repeat: no-repeat;  background-size: contain; padding: 100px 0 0 0;'>
             {{ field.errors }}
             <!-- <h2>{{ field.label_tag }} </h2> -->
             <p class="help">{{ field.help_text|safe }}: {{ field }}</p>

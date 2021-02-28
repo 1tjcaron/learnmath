@@ -7,4 +7,5 @@ urlpatterns = [
 ]
 urlpatterns += [
     path('quiz/zeroperc/', views.quiz_zero_perc, name='zero-perc'),
+    path('quiz/numberline/', views.quiz_number_line, name='number-line'),
 ]
