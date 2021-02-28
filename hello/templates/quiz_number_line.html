@@ -1,6 +1,7 @@
 
 
-
+<!-- 
+  position: absolute; right: 0; margin: 20px; max-width: 300px; padding: 16px;background-color: white; -->
 {% block content %}
   <form action="" method="post">
     <h1>Use a double number line to find 20% of 75 </h1>
@@ -8,11 +9,9 @@
     {% load static %} 
     
         <div class="fieldWrapper" style='background: url("/static/images/nl2.png"); color:white; width: 500;   background-repeat: no-repeat;  background-size: contain; padding: 100px 0 0 0;'>
-            {{ form.problem_one }}
+            <div style="position: relative; top:-105px; left: 40px">{{ form.problem_one }} </div>
         </div>
         {{ form.problem_one.errors }}
-            <!-- <h2>{{ field.label_tag }} </h2> -->
-        <p class="help">{{ form.problem_one.help_text|safe }}: </p>
     <input type="submit" value="Submit">
   </form>
 {% endblock %}
