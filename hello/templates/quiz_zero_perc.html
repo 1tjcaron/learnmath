@@ -4,14 +4,41 @@
   <form action="" method="post">
     <h1>Fill in the blanks below.</h1>
     {% csrf_token %}
-    {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-            <!-- <h2>{{ field.label_tag }} </h2> -->
-            <p class="help">{{ field.help_text|safe }}: {{ field }}</p>
-        </div>
-    {% endfor %}
+    <div style="display: flex;">
+    <div style="width: 50%; ">
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                <!-- <h2>{{ field.label_tag }} </h2> -->
+                <p class="help">{{ field.help_text|safe }}: {{ field }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div style="width: 30%; height: 200px; resize: none;">
+        <div id="webchat" style="height: 200px"></div>
+    </div>
+</div>
     <input type="submit" value="Submit">
   </form>
-  <iframe src='https://webchat.botframework.com/embed/teacher2?s=S40xfNpqQrg.m9Kwag7ugvR8g4bh4oiJd9yd7UR6GTMq2uqcCEDq7qw'  style='min-width: 400px; width: 100%; min-height: 200px;'></iframe>
+  <script
+      crossorigin="anonymous"
+      src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"
+    ></script>
+    
+    <script>
+      window.WebChat.renderWebChat(
+        {
+          directLine: window.WebChat.createDirectLine({
+            // TODO: this is only OK for hack - when we are storing real classroom data let's set up the proper direct line api auth
+            // https://github.com/microsoft/BotFramework-WebChat/blob/master/docs/API.md#how-to-connect-client-app-to-bot
+            secret: 'S40xfNpqQrg.m9Kwag7ugvR8g4bh4oiJd9yd7UR6GTMq2uqcCEDq7qw'
+          }),
+          userID: 'imastudent',
+          username: 'Web Chat User',
+          locale: 'en-US',
+          styleOptions: {}
+        },
+        document.getElementById('webchat')
+      );
+    </script>
 {% endblock %}
