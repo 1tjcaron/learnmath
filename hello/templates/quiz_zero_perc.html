@@ -2,7 +2,10 @@
 
 {% block content %}
   <form action="" method="post">
-    <h1>Fill in the blanks below. <button id='helpbutton' type="button" style="display: none" onclick="toggle_visibility('helper_bot');">help!</button></h1>
+    <h1>
+        Fill in the blanks below. <br>
+        <button id='helpbutton' type="button" style="display: none" onclick="toggle_visibility('helper_bot');">help!</button>
+    </h1>
     <div id="helper_bot" style="width: 30%; height: 200px; resize: none; display: none">
         <div id="webchat" style="height: 200px"></div>
     </div>
@@ -22,41 +25,5 @@
 </div>
     <input type="submit" value="Submit"> 
   </form>
-  <script
-      crossorigin="anonymous"
-      src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"
-    ></script>
-    
-    <script type="text/javascript">
-      window.WebChat.renderWebChat(
-        {
-          directLine: window.WebChat.createDirectLine({
-            // TODO: this is only OK for hack - when we are storing real classroom data let's set up the proper direct line api auth
-            // https://github.com/microsoft/BotFramework-WebChat/blob/master/docs/API.md#how-to-connect-client-app-to-bot
-            secret: 'S40xfNpqQrg.m9Kwag7ugvR8g4bh4oiJd9yd7UR6GTMq2uqcCEDq7qw'
-          }),
-          userID: 'imastudent',
-          username: 'Web Chat User',
-          locale: 'en-US',
-          styleOptions: {},
-          overrideLocalizedStrings: {
-            TEXT_INPUT_PLACEHOLDER: 'need help? ask me here!'
-            }
-        },
-        document.getElementById('webchat')
-      );
-      
-    // <!-- https://stackoverflow.com/questions/16308779/how-can-i-hide-show-a-div-when-a-button-is-clicked -->
-    // <!-- Then add onclick="toggle_visibility('id_of_element_to_toggle');" to the button that is used to show and hide the div. -->
-        
-        function toggle_visibility(id) {
-            var e = document.getElementById(id);
-            if(e.style.display == 'block')
-               e.style.display = 'none';
-            else
-               e.style.display = 'block';
-            document.getElementById(id);
-        }
-        document.getElementById('helpbutton').style.display = "inline"
-     </script>
+  {% include "_bot_add.html" %}
 {% endblock %}
