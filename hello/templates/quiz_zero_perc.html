@@ -4,9 +4,7 @@
         Fill in the blanks below. <br>
         <button id='helpbutton' type="button" style="display: none" onclick="toggle_visibility('helper_bot');">help!</button>
     </h1>
-    <div id="helper_bot" style="width: 30%; height: 200px; resize: none; display: none">
-        <div id="webchat" style="height: 200px"></div>
-    </div>
+    {% include "_bot_div.html" %}
     {% csrf_token %}
     
     
