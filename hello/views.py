@@ -12,7 +12,7 @@ from django.urls import reverse
 from . import forms
 
 
-def quiz_zero_perc(request):
+def quiz_percentage(request):
     # book_instance = get_object_or_404(BookInstance, pk=pk)
 
     # If this is a POST request then process the Form data
