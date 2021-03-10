@@ -19,7 +19,7 @@ def quiz_zero_perc(request):
     if request.method == 'POST':
 
         # Create a form instance and populate it with data from the request (binding):
-        form = forms.ZeroPercForm(request.POST)
+        form = forms.DefinedPercForm(2, 4, 20, request.POST)
 
         # Check if the form is valid:
         if form.is_valid():
@@ -28,7 +28,7 @@ def quiz_zero_perc(request):
     # If this is a GET (or any other method) create the default form.
     else:
         proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
-        form = forms.ZeroPercForm(initial={'renewal_date': proposed_renewal_date})
+        form = forms.DefinedPercForm(2, 4, 20, initial={'renewal_date': proposed_renewal_date})
 
     context = {
         'form': form,
