@@ -5,6 +5,16 @@
     ></script>
     
     <script type="text/javascript">
+      let title_h1 = document.getElementById('title-of-problem');
+      let newNodeCont = document.createElement('div')
+      newNodeCont.setAttribute("id", "helper_bot")
+      newNodeCont.setAttribute("style", "width: 50%; height: 200px; resize: none; display: none")
+      let _newNodeChat = document.createElement('div')
+      _newNodeChat.setAttribute("id", "webchat")
+      _newNodeChat.setAttribute("style", "height: 200px")
+      newNodeCont.appendChild(_newNodeChat)
+    //   TODO: append bot_div after the element
+      title_h1.parentNode.insertBefore(newNodeCont, title_h1.nextSibling);
       window.WebChat.renderWebChat(
         {
           directLine: window.WebChat.createDirectLine({
@@ -20,7 +30,7 @@
             TEXT_INPUT_PLACEHOLDER: 'need help? ask me here!'
             }
         },
-        document.getElementById('webchat')
+        newNodeCont
       );
       
     // <!-- https://stackoverflow.com/questions/16308779/how-can-i-hide-show-a-div-when-a-button-is-clicked -->

@@ -1,9 +1,9 @@
 {% block content %}
   <form action="" method="post">
-    <h1>Use a double number line to find 20% of 75. <br>
+    <h1 id="title-of-problem">
+        Use a double number line to find 20% of 75. <br>
         <button id='helpbutton' type="button" style="display: none" onclick="toggle_visibility('helper_bot');">help!</button>
     </h1>
-    {% include "_bot_div.html" %}
     {% csrf_token %}
     {% load static %}     
     <div class="fieldWrapper" style='background: url("https://drive.google.com/uc?export=view&id=1LMrq6dNMrhbgmMktOsTGbe3puRvv5vqF"); color:white; width: 500;   background-repeat: no-repeat;  background-size: contain; padding: 100px 0 0 0;'>

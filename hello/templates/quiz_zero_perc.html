@@ -1,10 +1,9 @@
 {% block content %}
   <form action="" method="post">
-    <h1>
+    <h1 id="title-of-problem">
         Fill in the blanks below. <br>
         <button id='helpbutton' type="button" style="display: none" onclick="toggle_visibility('helper_bot');">help!</button>
     </h1>
-    {% include "_bot_div.html" %}
     {% csrf_token %}
     
     
