@@ -13,7 +13,14 @@
       _newNodeChat.setAttribute("id", "webchat")
       _newNodeChat.setAttribute("style", "height: 200px")
       newNodeCont.appendChild(_newNodeChat)
-    //   TODO: append bot_div after the element
+
+      let a_button = document.createElement('button')
+      a_button.setAttribute("id", "helpbutton")
+      a_button.setAttribute("style", "display: none")
+      a_button.setAttribute("onclick", "toggle_visibility('helper_bot');")
+      a_button.textContent = "help!"
+      title_h1.appendChild(document.createElement("br"))
+      title_h1.appendChild(a_button);
       title_h1.parentNode.insertBefore(newNodeCont, title_h1.nextSibling);
       window.WebChat.renderWebChat(
         {
