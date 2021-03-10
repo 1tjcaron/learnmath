@@ -6,6 +6,6 @@ urlpatterns = [
     path('', views.hello, name='hello'),
 ]
 urlpatterns += [
-    path('quiz/percentage/', views.quiz_percentage, name='perc'),
+    path('quiz/percentage/<int:problem_number>', views.quiz_percentage, name='perc'),
     path('quiz/numberline/', views.quiz_number_line, name='number-line'),
 ]
