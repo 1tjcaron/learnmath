@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 page_type: sample
 description: "A minimal sample app that can be used to demonstrate deploying Django apps to Azure App Service on Linux."
@@ -25,3 +26,7 @@ This sample contains two modifications in the file *django_hello/settings.py*:
 ## Contributing
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+||||||| empty tree
+=======
+# learnmath
+>>>>>>> f4a93686dc98d3e4de99d9bf9d85a0811c725053
