@@ -12,6 +12,10 @@ from django.urls import reverse
 from . import forms
 
 
+
+def pass_quiz_percentage(request):
+    return HttpResponse('Great Job! Go <a href="/"> gack home</a>')
+
 def quiz_percentage(request, problem_number):
     problems = {
         1: (10, 20, 60),
@@ -35,7 +39,7 @@ def quiz_percentage(request, problem_number):
             if problem_number < max(problems.keys()):
                 return HttpResponseRedirect(f"/quiz/percentage/{problem_number + 1}")
             else:
-                return HttpResponseRedirect(f"/")
+                return HttpResponseRedirect(f"/quiz/percentage/success")
     # If this is a GET (or any other method) create the default form.
     else:
         proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
