@@ -9,10 +9,15 @@ class AnyPercForm(forms.Form):
     # https://stackoverflow.com/questions/871037/django-overriding-init-for-custom-forms
     problem_one = forms.DecimalField(
         widget=forms.NumberInput(attrs={'style':'max-width: 50px; border-color:darkgoldenrod; border-radius: 10px;'}),
-        decimal_places=0)
+        decimal_places=0,
+        min_value=0,
+        max_value=100)
     problem_two = forms.DecimalField(
         widget=forms.NumberInput(attrs={'style':'max-width: 50px; border-color:darkgoldenrod; border-radius: 10px;'}),
-        decimal_places=0)
+        decimal_places=0,
+        min_value=0,
+        max_value=100
+        )
         
 class DefinedPercForm(AnyPercForm):
      def __init__(self, p1, p2, n, *args, **kwargs):   
