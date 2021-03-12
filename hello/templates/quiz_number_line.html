@@ -5,7 +5,7 @@
     {% csrf_token %}
     {% load static %}     
     <div class="fieldWrapper" style='background: url("https://drive.google.com/uc?export=view&id=1LMrq6dNMrhbgmMktOsTGbe3puRvv5vqF"); color:white; width: 500;   background-repeat: no-repeat;  background-size: contain; padding: 100px 0 0 0;'>
-        <div style="position: relative; top:-105px; left: 40px">{{ form.problem_one }} </div>
+        <label style="position: relative; top:-105px; left: 40px; max-width: 80px;">{{ form.problem_one }} </label>
     </div>
     {{ form.problem_one.errors }}
     

@@ -9,7 +9,6 @@
         {% for field in form %}
             <div class="fieldWrapper">
                 {{ field.errors }}
-                <!-- <h2>{{ field.label_tag }} </h2> -->
                 <label>{{ field.help_text|safe }}: {{ field }}</label>
             </div>
         {% endfor %}
