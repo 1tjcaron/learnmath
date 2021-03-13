@@ -5,8 +5,6 @@
     ></script>
     
     <script type="text/javascript">
-      let title_h1 = document.getElementById('title-of-problem');
-
       function toggle_visibility(id) {
                 var e = document.getElementById(id);
                 if(e.style.display == 'block') {
@@ -48,13 +46,15 @@
             a_button.setAttribute("id", "helpbutton");
             a_button.setAttribute("class", "btn btn-warning")
             a_button.setAttribute("onclick", "toggle_visibility('webchat');")
+            a_button.setAttribute("style", "position: relative; top:-15px;")
             a_button.textContent = "help!";
-            div.appendChild(document.createElement("br"));
-            div.appendChild(a_button);
+            div.parentNode.insertBefore(a_button, div.nextSibling)
+            document.getElementsByClassName()       
             document.getElementById('helpbutton').style.display = "inline";
         }
-      add_invisible_chatbot_nextsib(title_h1);
-      add_help_toggle_as_child(title_h1);
+      let placement = document.getElementById("problemform");
+      add_invisible_chatbot_nextsib(placement);
+      add_help_toggle_nextsib(placement);
       
     
      </script>
