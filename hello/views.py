@@ -14,7 +14,7 @@ from . import forms
 
 
 def pass_quiz_percentage(request):
-    return HttpResponse('Great Job! Go <a href="/"> gack home</a>')
+    return HttpResponse('Great Job! Go <a href="/"> back home</a>')
 
 def quiz_percentage(request, problem_number):
     problems = {
@@ -47,6 +47,7 @@ def quiz_percentage(request, problem_number):
 
     context = {
         'form': form,
+        'problem': f"Problem ({problem_number}/5)"
         # 'book_instance': book_instance,
     }
 
