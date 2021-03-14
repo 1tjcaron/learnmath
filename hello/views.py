@@ -2,7 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def hello(request):
-    return render(request, 'hello.html', {})
+    return render(request, 'hello.html', {"status1": "Unstarted"})
+
+def hi2(request):
+    return render(request, 'hello.html', {"status1": "Done"})
 
 
 import datetime
@@ -14,7 +17,7 @@ from . import forms
 
 
 def pass_quiz_percentage(request):
-    return HttpResponse('Great Job! Go <a href="/"> back home</a>')
+    return HttpResponse('Great Job! Go <a href="/1"> back home</a>')
 
 def quiz_percentage(request, problem_number):
     problems = {
@@ -23,7 +26,7 @@ def quiz_percentage(request, problem_number):
         3: (10, 15, 100),
         4: (15, 30, 100),
         5: (0, 100, 20),
-    }
+    }   
 
     
     # book_instance = get_object_or_404(BookInstance, pk=pk)
