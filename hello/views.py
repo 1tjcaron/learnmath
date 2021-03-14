@@ -27,7 +27,7 @@ def quiz_percentage(request, problem_number):
         4: (15, 30, 100),
         5: (0, 100, 20),
     }   
-
+    
     
     # book_instance = get_object_or_404(BookInstance, pk=pk)
 
